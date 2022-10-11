@@ -1,37 +1,35 @@
-.Home {
+.home{
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box{
+  width: 300px;
+  height: 200px;
+  position: relative;
+  background-color: antiquewhite;
+  border-radius: 16px;
+  border: 2px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
-.Home-logo {
-  animation: Home-logo-spin infinite 20s linear;
-  height: 80px;
+.welcome-text{
+  font-size: 18px;
 }
 
-.Home-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.input-name{
+  display: block;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 5px;
+  width: 200px;
 }
 
-.Home-intro {
-  font-size: large;
-}
-
-.Home-resources {
-  list-style: none;
-}
-
-.Home-resources > li {
-  display: inline-block;
-  padding: 1rem;
-}
-
-@keyframes Home-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

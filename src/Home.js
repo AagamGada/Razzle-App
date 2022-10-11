@@ -1,33 +1,28 @@
-import React from 'react';
-import logo from './react.svg';
+import React, { useState } from 'react';
 import './Home.css';
 
-class Home extends React.Component {
-  render() {
-    return (
-      <div className="Home">
-        <div className="Home-header">
-          <img src={logo} className="Home-logo" alt="logo" />
-          <h2>Welcome to Razzle</h2>
-        </div>
-        <p className="Home-intro">
-          To get started, edit <code>src/App.js</code> or{' '}
-          <code>src/Home.js</code> and save to reload.
-        </p>
-        <ul className="Home-resources">
-          <li>
-            <a href="https://github.com/jaredpalmer/razzle">Docs</a>
-          </li>
-          <li>
-            <a href="https://github.com/jaredpalmer/razzle/issues">Issues</a>
-          </li>
-          <li>
-            <a href="https://palmer.chat">Community Slack</a>
-          </li>
-        </ul>
-      </div>
-    );
+const Home = () => {
+  const [name, setName] = useState('')
+  const saveName = (e) => {
+    setName(e.target.name.value)
   }
+  return (
+    <div className="home">
+      <div className='box'>
+        <div>
+          <p className='welcome-text'>Welcome to Razzle App</p>
+          {name.length > 0 && <p className='user-name'>{name}</p>}
+          {
+            name.length === 0 &&
+            <form onSubmit={(e) => saveName(e)}>
+              <input type='text' className='input-name' name='name' placeholder='Enter Your Name..'></input>
+              <input type='submit' className='input-submit' value={'Submit'}></input>
+            </form>
+          }
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Home;
